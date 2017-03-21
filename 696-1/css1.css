@@ -1,0 +1,115 @@
+body {background-image:url("Image/background.jpg");}
+#wrapper{width:100%,background-image:Image/background.jpg}
+#header{text-align:center;width:100%;}
+#menu{width:100%;float:left;min-width:60px;text-align:center;}
+#menu ul{list-style-type:none;
+	display:inline-block;
+	background:pink;
+	text-align:right;
+	width=100%}
+li{float:left; border-left-style:solid; }
+li.none{border-left-style:none;}
+li.facebook{border-left-style:none;}
+li a {
+    display:inline-block;;
+    color: black;
+    text-align: center;
+    padding-right: 66px;
+	padding-left:66px;
+	padding-top:5px;
+	padding-bottom:5px;
+    text-decoration: none;
+	font-family:"Comic Sans MS", cursive, sans-serif;
+	font-size:22px;
+	height:32px;
+}
+li a:hover {
+    color: blue;
+}
+
+label {font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;font-size:18px;}
+#content{background-color:#ffffe6;margin-top:70px;margin-left:110px;margin-right:110px;margin-bottom:60px;}
+#info{float:left;width:20%;margin-left:100px;background-color:#ffffe6;height:650px;margin-bottom:60px;}
+#form{float:left;padding-left:200px;padding-right:200px;text-align:left;margin-left:35px;background-color:#ffffe6;height:650px;margin-bottom:60px;}
+#outside
+{
+	width:650px;
+	overflow:hidden;
+	margin:0 auto;
+	position:relative;
+}
+#container{
+	width:2710px;
+	position:relative;
+	animation-name:jatinder;
+	animation-duration:20s;
+	animation-iteration-count:infinite;}
+#container img{float:left;width:650px;height:450px;}
+@keyframes jatinder{
+	0%
+	{
+		left:0px;
+	}
+	20%
+	{
+		left:0px;
+	}
+	25%
+	{
+		left:-652px;
+	}
+	45%
+	{
+		left:-652px;
+	}
+	50%
+	{
+		left:-1304px;
+	}
+	70%
+	{
+		left:-1304px;
+	}
+	75%
+	{
+		left:-1956px;
+	}
+	95%
+	{
+		left:-1956px;
+	}
+	100%
+	{
+		left:-2608px;
+	}
+	
+}
+#container .btn{position:absolute;width:50px;height:50px;border:none;border-radius:25px;margin-top:200px;font-size:20px;}
+#container #btn1:hover{background-color:grey;}
+#container #btn2:hover{background-color:grey;}
+#container #btn2{position:relative;float:right;}
+h1{font-family:"Comic Sans MS", cursive, sans-serif;font-size:40px;text-align:center;padding-top:25px;}
+h2{font-family:"Comic Sans MS", cursive, sans-serif;font-size:26px;}
+h5{font-family:"Comic Sans MS", cursive, sans-serif;font-size:20px;text-align:center;}
+h6{font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;font-size:18px;padding-left:180px;padding-right:180px;padding-bottom:30px;}
+p{font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif; font-size:15px;}
+p.center{text-align:center;}
+/*#footer{text-align:center;font-size:12px;width:100%;color:grey;height:60px;margin-bottom:0;}*/
+input[type=text],input[type=datetime-local]{width:400px;height:25px;}
+select{width:405px;height:27px;}
+input[type=button]{
+	background-color:pink;
+	border:none;
+	color:black;
+	padding:10px 32px;
+	text-decoration:none;
+	margin-top:6px;
+	margin-bottom:6px;
+	margin-left:45px;
+	cursor:pointer;
+	font-size:18px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+img{padding-left:3px;}
+
+
