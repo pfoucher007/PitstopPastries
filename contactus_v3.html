@@ -1,0 +1,156 @@
+<!doctype html>
+<head>
+	<script type="text/javascript" id = "contactScript">
+		window.addEventListener("load", start, false);
+		
+		function setMinDate(){
+			var input = document.getElementById("timePicker");
+			//var currentTime = new DateTime();
+			//var datePortion = new String(currentTime.getDate());
+			//var monthPortion = new String(currentTime.getDate()+1); //Months are 0 to 11, January to December for some reason
+			//var yearPortion = currentTime.getFullYear();
+			/*
+			var today = new Date();
+			var datePortion = new String(today.getDate());
+			var monthPortion = new String(today.getDate()+1);
+			var yearPortion = today.getFullYear();
+
+			if(datePortion.length < 2) { day = "0" + datePortion; }
+			if(monthStart.length < 2) { monthPortion = "0" + monthPortion; }
+			var minDate = new String( yearPortion + '-' + monthPortion + '-' + datePortion + 'T00:00:00.0');
+			
+			//input.setAttribute('min', minDate);
+			*/
+			input.setAttribute('min', '2017-03-15T00:00:00.0');
+			}
+
+		function disableOtherDesc(){
+			document.getElementById("otherDesc").disabled = true;
+		}
+		function enableOtherDesc(){
+			document.getElementById("otherDesc").disabled = false;
+		}
+		function clearOtherDesc(){
+			document.getElementById("otherDesc").value = "";
+		}
+		function poll() {
+			var theSelector = document.getElementById("event");
+			var otherEventSelected = theSelector.options[theSelector.selectedIndex].value === "other";
+			if(otherEventSelected)
+				{
+				enableOtherDesc();
+				}
+			else
+				{
+				disableOtherDesc();
+				clearOtherDesc();
+				}
+			}
+		function describe(){
+			var consultSelector = document.getElementById("consultation");
+			var selectedConsult = consultSelector.options[consultSelector.selectedIndex].value;
+			
+			var pastryDesc = "We'll discuss your needs for large pastry orders (between 50-200 pieces) for your event of choice. Final pastry cost will be determined afterward.";
+			var basicDesc = "We'll discuss the needs for a simple, 1 tier cake, for your event of choice. This includes Flavor, Icing Choice, colors, inscription, and any additional pieces. Cake Price will also be determined.";
+			var advancedDesc = "We'll discuss the needs of any cake you need ranging between 2-3 tiers. Design, flavors, colors, etc. will be discussed. Pricing will be determined after consultation finishes. Bring references.";
+			var noneDesc = "<i>This will guide our conversation</i>";
+			
+			switch(selectedConsult){
+			case "pastry":
+			{
+			document.getElementById("consultationTypeDesc").innerHTML = pastryDesc;
+			break;
+			}
+			case "basic":
+			{
+			document.getElementById("consultationTypeDesc").innerHTML = basicDesc;
+			break;
+			}
+			case "advanced":
+			{
+			document.getElementById("consultationTypeDesc").innerHTML = advancedDesc;
+			break;
+			}
+			case "none":
+			{
+			document.getElementById("consultationTypeDesc").innerHTML = noneDesc;
+			break;
+			}
+		}
+						
+		}
+	</script>
+	<title>Contact Us</title>
+	<link type="text/css" href="css1.css" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+				<img src="Image/logopits.gif" alt="Headline" style="width:500px;height:260px">
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="none"><a href="index.html">Home</a></li>
+				<li><a href="service.html">Services</a></li>
+				<li><a href="gallery.html">Cake Gallery</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
+				<li class="facebook"><a href="https://www.facebook.com/PitstopPastries/" target="_blank"><img src="Image/facebook.png" style="width:30px;height:30px"></a></li>
+			</ul>
+		</div>	
+			<div id="info">
+				<h5> ~ Hours of Operation ~ </h5>
+				<p class="center"> Monday - Sunday<br> 9:00 AM - 5:00 PM </p>
+				<h5> ~ Contact Information ~</h5>
+				<p class="center">Pitstop Pastries<br>13830 Cambridge Avenue<br>Southgate, MI 48195<br>313-471-4534<br>aaron.matney@yahoo.com</p><br>
+				<img src="Image/map.png" style="width:260px;height:260px">
+			</div>
+			<div id="form">
+			<h2>Arrange A Consultation</h2>
+			<form>
+			<label>Name:</label><br>
+					<input name = "name" type = "text" required><BR>
+				<label>Email:</label><br>
+					<input name = "email" type = "email" required><BR>
+				<label>Phone Number:</label><br>
+				<input name = "phone" type = "tel" pattern="^\d{3}-\d{3}-\d{4}$" title="Phone Number in xxx-xxx-xxxx format" required><br>
+				<label> Choose Consultation Type:</label><br>
+				<select onchange="describe()" id="consultation">
+				    <option value="none">- -</option>
+					<option value="pastry">Pastry Consultation--$40</option>
+					<option value="basic">Basic Consultation--$40</option>
+					<option value="advanced">Advanced Consultation--$60</option>
+				</select><br>
+				<P id = "consultationTypeDesc"><i>This will guide our conversation</i></P>
+				<label>Choose the occasion:</label><BR>
+				<select onchange="poll()" id="event">
+					  <option value="none">None</option>
+					  <option value="wedding">Wedding</option>
+					  <option value="graduation">Graduation</option>
+					  <option value="birthday"> Birthday</option>
+					  <option value="shower">Baby Shower</option>
+					  <option value="churchCharity">Church/Charity Event</option>
+					  <option value="other">Other</option> 
+				</select><br>
+					<label>If other, please describe:  </label>
+					<input id="otherDesc" type = "text" disabled><br>
+				<label>Choose a Date & Time(EST): </label><br><input id = "timePicker" name = "timePicker" onload = "setMinDate()" type = "datetime-local"  required><br>
+				<label>Other message:</label><br>
+				<textarea name = "message" type = "textarea" rows = "10" cols="55" value = "message"></textarea><BR>
+				<input type="submit" name="submit" value="Submit" id="submit">
+				<input type="button" name="cancel" value="Cancel" id="submit">
+			</form>	
+			</div>	
+
+	<!--<div id="footer">
+	<p> While using this site, you agree to have read and accepted our terms of use, cookie 
+				and privacy policy. Copyright 2016-2017 by Nan Wang & Patricia Foucher. All Rights Reserved.</p>
+	</div>
+	-->
+		
+		</div>	
+	
+</body>
+
+
+
+</html>
