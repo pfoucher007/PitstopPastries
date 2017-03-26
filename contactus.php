@@ -1,0 +1,149 @@
+<!doctype html>
+<head>
+		<script type="text/javascript" id = "contactScript">
+		window.addEventListener("load", start, false);
+		
+		function disableOtherDesc(){
+			document.getElementById("otherDesc").disabled = true;
+		}
+		function enableOtherDesc(){
+			document.getElementById("otherDesc").disabled = false;
+		}
+		function clearOtherDesc(){
+			document.getElementById("otherDesc").value = "";
+		}
+		function poll() {
+			var theSelector = document.getElementById("event");
+			var otherEventSelected = theSelector.options[theSelector.selectedIndex].value === "other";
+			if(otherEventSelected)
+				{
+				enableOtherDesc();
+				}
+			else
+				{
+				disableOtherDesc();
+				clearOtherDesc();
+				}
+			}
+		function describe(){
+			var consultSelector = document.getElementById("consultation");
+			var selectedConsult = consultSelector.options[consultSelector.selectedIndex].value;
+			
+			var pastryDesc = "We'll discuss your needs for large pastry orders (between 50-200 pieces) for your event of choice. Final pastry cost will be determined afterward.";
+			var basicDesc = "We'll discuss the needs for a simple, 1 tier cake, for your event of choice. This includes Flavor, Icing Choice, colors, inscription, and any additional pieces. Cake Price will also be determined.";
+			var advancedDesc = "We'll discuss the needs of any cake you need ranging between 2-3 tiers. Design, flavors, colors, etc. will be discussed. Pricing will be determined after consultation finishes. Bring references.";
+			var noneDesc = "<i>This will guide our conversation</i>";
+			
+			switch(selectedConsult){
+			case "Pastries Consultation":
+			{
+			document.getElementById("consultationTypeDesc").innerHTML = pastryDesc;
+			break;
+			}
+			case "Basic Consultation":
+			{
+			document.getElementById("consultationTypeDesc").innerHTML = basicDesc;
+			break;
+			}
+			case "Advanced Consultation":
+			{
+			document.getElementById("consultationTypeDesc").innerHTML = advancedDesc;
+			break;
+			}
+			case "none":
+			{
+			document.getElementById("consultationTypeDesc").innerHTML = noneDesc;
+			break;
+			}
+		}
+						
+		}
+	</script>
+	<title>Contact Us</title>
+	<link type="text/css" href="css1.css" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+				<img src="Image/logopits.gif" alt="Headline" style="width:500px;height:260px">
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="none"><a href="index.php">Home</a></li>
+				<li><a href="services.php">Services</a></li>
+				<li><a href="event.php">Event</a></li>
+				<li><a href="gallery.php">Cake Gallery</a></li>
+				<li><a href="contactus.php">Contact Us</a></li>
+				<li class="facebook"><a href="https://www.facebook.com/PitstopPastries/" target="_blank"><img src="Image/facebook.png" style="width:30px;height:30px"></a></li>
+			</ul>
+		</div>	
+		<div id="content">
+			<div id="info">
+				<h5> ~ Hours of Operation ~ </h5>
+				<p class="center"> Monday - Sunday<br> 9:00 AM - 5:00 PM </p>
+				<h5> ~ Contact Information ~</h5>
+				<p class="center">Pitstop Pastries<br>13830 Cambridge Avenue<br>Southgate, MI48195<br>313-471-4534<br>aaron.matney@yahoo.com</p><br>
+				<img src="Image/map.png" style="width:260px;height:260px">
+			</div>
+			<div id="form">
+			<h2>Arrange A Consultation</h2>
+			<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<label>Name:</label><br>
+					<input name = "name" type = "text" required ><BR>
+				<label>Email:</label><br>
+					<input name = "email" type = "email" required><BR>
+				<label>Phone Number:</label><br>
+				<input name = "phone" type = "tel" required ><br>
+				<label>Choose Consultation Type:</label><br>
+				<select name="os0" onchange="describe()" id="consultation" required>
+						<option value="none">- -</option>
+						<option value="Basic Consultation">Basic Consultation $40.00 USD</option>
+						<option value="Pastries Consultation">Pastries Consultation $40.00 USD</option>
+						<option value="Advanced Consultation">Advanced Consultation $60.00 USD</option>
+				</select><br><br><br>
+				<div id="consultationType">
+				<label id = "consultationTypeDesc"><i>This will guide our conversation</i></label><br>
+				</div>
+				<label>Choose the occassion:</label><BR>
+				<select name="event" onchange="poll()" id="event" required>
+					  <option value="none">- -</option>
+					  <option value="wedding">Wedding</option>
+					  <option value="graduation">Graduation</option>
+					  <option value="birthday"> Birthday</option>
+					  <option value="shower">Baby Shower</option>
+					  <option value="churchCharity">Church/Charity Event</option>
+					  <option value="other">Other</option> 
+				</select><br>
+				<label>If other, please describe:</label><br>
+				<input id="otherDesc" type = "text" disabled><br>
+				<label>Choose a Date & Time(EST): </label><br><input name = "time" type = "datetime-local" required><br>
+				<label>Other message:</label><br>
+				<textarea name = "message" type = "textarea" rows = "7" cols="55" value = "message"></textarea><BR>
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="89ZBV5KX8BDXQ">
+					<!--<table>
+					<tr><td><input type="hidden" name="on0" value="Name of drop-down menu">Choose consultation type</td></tr><tr><td><select name="os0">
+						<option value="Basic Consultation">Basic Consultation $40.00 USD</option>
+						<option value="Pastries Consultation">Pastries Consultation $40.00 USD</option>
+						<option value="Advanced Consultation">Advanced Consultation $60.00 USD</option>
+					</select> </td></tr>
+					</table>-->
+				<input type="hidden" name="currency_code" value="USD">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">	
+				<!--<input type="button" name="cancel" value="Cancel" id="cancel">-->
+			</form>	
+			</div>	
+		</div>
+		
+		
+		<div id=footer>
+			<p class="pFooter">Copyright 2017 by Pistop Pastries.All right reserved</p>
+		</div>
+		</div>	
+	
+</body>
+
+
+
+</html>
