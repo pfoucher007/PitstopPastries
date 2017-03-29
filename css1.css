@@ -91,10 +91,18 @@ margin-bottom:60px;padding-left:60px;padding-right:60px;padding-bottom:40px;posi
 #container #btn2{position:relative;float:right;}
 #consultation{width:50%;float:left;padding-left:80px;position:relative;margin-top:20px;}
 #image{width:40%;float:left;position:relative;height:auto;margin-top:20px;}
+#image1{width:30%;float:left;padding-left:70px;}
+#about1{width:50%;float:left;height:auto;padding-left:70px;}
+#maker{display:inline-block;}
+#image2{width:30%;float:left;height:auto;padding-left:80px;}
+#chief{width:50%;float:left;padding-left:80px;}
 #cakeImage{max-width:100%;max-height:100%;}
 #pForm{font-style:italic;padding-bottom:5px;}
+#maker{float:clear;margin-top:30px;height:40%;}
+#border{margin-top:80px;height:50px;width:100%}
+.round{border-radius:50%;}
 h1{font-family:Georgia, serif;font-size:40px;text-align:center;padding-top:25px;}
-h2{font-family:Georgia, serif;font-size:26px;}
+h2{font-family:Georgia, serif;font-size:26px;text-align:left;}
 h3{margin:0px;}
 h5{font-family:Georgia, serif;font-size:20px;text-align:center;}
 h6{font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;font-size:18px;padding-left:180px;padding-right:180px;text-indent:50px;margin-top:20px;margin-bottom:0px;}
