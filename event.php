@@ -21,15 +21,16 @@
 		<div id="content">
 			<div class="upevent">
 				<h2>Upcoming Events</h2>
-				<p>3/13/2017 Michigan Bake Sale</p>
+				<p>5/13/2017 Michigan Bake Sale</p>
 			</div>
 			<div class="upevent">
 				<h2>Past Events</h2>
-				<p>1/1/2017 Michigan Bake Sale</p>
+				<p>3/15/2017 St. Patrick's Day Cupcakes for a bake sale at Henry Ford College</p>
+				<p>2/11/2017 Cakes and Subs at Redford Church of God</p>
 			</div>
 		</div>
 		<div id=footer>
-			<p class="pFooter">Copyright 2017 by Pistop Pastries.All right reserved</p>
+			<p class="pFooter">Copyright 2017 by Pistop Pastries. All rights reserved</p>
 		</div>
 		
 </html>
